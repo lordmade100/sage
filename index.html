@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sage Platform Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+    <div class="flex h-screen overflow-hidden">
+        
+        <aside class="w-64 bg-white border-r border-gray-200 flex flex-col z-10">
+            <div class="h-16 flex items-center px-6 border-b border-gray-200">
+                <span class="text-xl font-bold text-green-600 tracking-tight">AppForSage</span>
+            </div>
+            <nav id="sidebar-nav" class="flex-1 px-4 py-6 space-y-2">
+                <button onclick="switchTab('Dashboard')" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-green-50 text-green-700">
+                    Dashboard
+                </button>
+                <button onclick="switchTab('Invoices')" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100">
+                    Invoices
+                </button>
+                <button onclick="switchTab('Customers')" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100">
+                    Customers
+                </button>
+                <button onclick="switchTab('Reports')" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100">
+                    Reports
+                </button>
+                <button onclick="switchTab('Settings')" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100">
+                    Settings
+                </button>
+            </nav>
+        </aside>
+
+        <div class="flex-1 flex flex-col overflow-hidden">
+            
+            <header class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8 z-10">
+                <h1 id="page-title" class="text-2xl font-semibold text-gray-800">Dashboard</h1>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                        </svg>
+                    </button>
+                    <div class="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-sm shadow-sm">
+                        K
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-1 overflow-y-auto p-8">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-sm font-medium text-gray-500 mb-2">Total Revenue</h3>
+                        <div class="text-2xl font-bold text-gray-900 mb-2">R 450,230.00</div>
+                        <div class="text-sm font-medium text-green-600">+12.5% vs last month</div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-sm font-medium text-gray-500 mb-2">Total Expenses</h3>
+                        <div class="text-2xl font-bold text-gray-900 mb-2">R 210,400.00</div>
+                        <div class="text-sm font-medium text-red-600">-2.4% vs last month</div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-sm font-medium text-gray-500 mb-2">Net Profit</h3>
+                        <div class="text-2xl font-bold text-gray-900 mb-2">R 239,830.00</div>
+                        <div class="text-sm font-medium text-green-600">+18.1% vs last month</div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-sm font-medium text-gray-500 mb-2">Outstanding Invoices</h3>
+                        <div class="text-2xl font-bold text-gray-900 mb-2">R 45,000.00</div>
+                        <div class="text-sm font-medium text-gray-500">5 payments pending</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="px-6 py-5 border-b border-gray-200 flex justify-between items-center">
+                        <h2 class="text-lg font-semibold text-gray-800">Recent Invoices</h2>
+                        <button class="text-sm font-medium text-green-600 hover:text-green-700 transition-colors">View all</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider border-b border-gray-200">
+                                    <th class="px-6 py-3 font-semibold">Invoice ID</th>
+                                    <th class="px-6 py-3 font-semibold">Client</th>
+                                    <th class="px-6 py-3 font-semibold">Date</th>
+                                    <th class="px-6 py-3 font-semibold">Amount</th>
+                                    <th class="px-6 py-3 font-semibold">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm font-medium text-gray-900">INV-1042</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Acme Corp</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">2026-06-15</td>
+                                    <td class="px-6 py-4 text-sm text-gray-900 font-semibold">R 12,500.00</td>
+                                    <td class="px-6 py-4 text-sm">
+                                        <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Paid</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm font-medium text-gray-900">INV-1043</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">TechFlow Solutions</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">2026-06-16</td>
+                                    <td class="px-6 py-4 text-sm text-gray-900 font-semibold">R 8,200.00</td>
+                                    <td class="px-6 py-4 text-sm">
+                                        <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Pending</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm font-medium text-gray-900">INV-1044</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Global Logistics</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">2026-06-17</td>
+                                    <td class="px-6 py-4 text-sm text-gray-900 font-semibold">R 24,000.00</td>
+                                    <td class="px-6 py-4 text-sm">
+                                        <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">Overdue</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm font-medium text-gray-900">INV-1045</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">DevStudio Inc.</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">2026-06-17</td>
+                                    <td class="px-6 py-4 text-sm text-gray-900 font-semibold">R 4,500.00</td>
+                                    <td class="px-6 py-4 text-sm">
+                                        <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Pending</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            // Update the header text
+            document.getElementById('page-title').innerText = tabName;
+
+            // Update active sidebar button styles
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                if (btn.innerText.trim() === tabName) {
+                    btn.className = "nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-green-50 text-green-700";
+                } else {
+                    btn.className = "nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
