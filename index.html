@@ -26,19 +26,39 @@
                 <span class="text-xl font-bold text-green-600 tracking-tight">AppForSage</span>
             </div>
             <nav id="sidebar-nav" class="flex-1 px-4 py-6 space-y-2">
-                <button onclick="switchTab('Dashboard')" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-green-50 text-green-700">
+                <button onclick="switchTab('dashboard', 'Dashboard')" data-tab="dashboard" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-green-50 text-green-700 transition-colors">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
                     Dashboard
                 </button>
-                <button onclick="switchTab('Invoices')" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100">
+                
+                <button onclick="switchTab('invoices', 'Invoices')" data-tab="invoices" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
                     Invoices
                 </button>
-                <button onclick="switchTab('Customers')" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100">
+                
+                <button onclick="switchTab('customers', 'Customers')" data-tab="customers" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
                     Customers
                 </button>
-                <button onclick="switchTab('Reports')" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100">
+                
+                <button onclick="switchTab('reports', 'Reports')" data-tab="reports" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
                     Reports
                 </button>
-                <button onclick="switchTab('Settings')" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100">
+                
+                <button onclick="switchTab('settings', 'Settings')" data-tab="settings" class="nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
                     Settings
                 </button>
             </nav>
@@ -61,86 +81,120 @@
                 </div>
             </header>
 
-            <main class="flex-1 overflow-y-auto p-8">
+            <main class="flex-1 overflow-y-auto p-8 bg-gray-50">
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                        <h3 class="text-sm font-medium text-gray-500 mb-2">Total Revenue</h3>
-                        <div class="text-2xl font-bold text-gray-900 mb-2">R 450,230.00</div>
-                        <div class="text-sm font-medium text-green-600">+12.5% vs last month</div>
+                <div id="panel-dashboard" class="tab-panel block">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-sm font-medium text-gray-500 mb-2">Total Revenue</h3>
+                            <div class="text-2xl font-bold text-gray-900 mb-2">R 450,230.00</div>
+                            <div class="text-sm font-medium text-green-600">+12.5% vs last month</div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-sm font-medium text-gray-500 mb-2">Total Expenses</h3>
+                            <div class="text-2xl font-bold text-gray-900 mb-2">R 210,400.00</div>
+                            <div class="text-sm font-medium text-red-600">-2.4% vs last month</div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-sm font-medium text-gray-500 mb-2">Net Profit</h3>
+                            <div class="text-2xl font-bold text-gray-900 mb-2">R 239,830.00</div>
+                            <div class="text-sm font-medium text-green-600">+18.1% vs last month</div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-sm font-medium text-gray-500 mb-2">Outstanding Invoices</h3>
+                            <div class="text-2xl font-bold text-gray-900 mb-2">R 45,000.00</div>
+                            <div class="text-sm font-medium text-gray-500">5 payments pending</div>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                        <h3 class="text-sm font-medium text-gray-500 mb-2">Total Expenses</h3>
-                        <div class="text-2xl font-bold text-gray-900 mb-2">R 210,400.00</div>
-                        <div class="text-sm font-medium text-red-600">-2.4% vs last month</div>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                        <h3 class="text-sm font-medium text-gray-500 mb-2">Net Profit</h3>
-                        <div class="text-2xl font-bold text-gray-900 mb-2">R 239,830.00</div>
-                        <div class="text-sm font-medium text-green-600">+18.1% vs last month</div>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                        <h3 class="text-sm font-medium text-gray-500 mb-2">Outstanding Invoices</h3>
-                        <div class="text-2xl font-bold text-gray-900 mb-2">R 45,000.00</div>
-                        <div class="text-sm font-medium text-gray-500">5 payments pending</div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-5 border-b border-gray-200 flex justify-between items-center">
+                            <h2 class="text-lg font-semibold text-gray-800">Recent Invoices</h2>
+                            <button class="text-sm font-medium text-green-600 hover:text-green-700 transition-colors" onclick="switchTab('invoices', 'Invoices')">View all</button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider border-b border-gray-200">
+                                        <th class="px-6 py-3 font-semibold">Invoice ID</th>
+                                        <th class="px-6 py-3 font-semibold">Client</th>
+                                        <th class="px-6 py-3 font-semibold">Date</th>
+                                        <th class="px-6 py-3 font-semibold">Amount</th>
+                                        <th class="px-6 py-3 font-semibold">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr class="hover:bg-gray-50 transition-colors">
+                                        <td class="px-6 py-4 text-sm font-medium text-gray-900">INV-1042</td>
+                                        <td class="px-6 py-4 text-sm text-gray-600">Acme Corp</td>
+                                        <td class="px-6 py-4 text-sm text-gray-600">2026-06-15</td>
+                                        <td class="px-6 py-4 text-sm text-gray-900 font-semibold">R 12,500.00</td>
+                                        <td class="px-6 py-4 text-sm">
+                                            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Paid</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50 transition-colors">
+                                        <td class="px-6 py-4 text-sm font-medium text-gray-900">INV-1043</td>
+                                        <td class="px-6 py-4 text-sm text-gray-600">TechFlow Solutions</td>
+                                        <td class="px-6 py-4 text-sm text-gray-600">2026-06-16</td>
+                                        <td class="px-6 py-4 text-sm text-gray-900 font-semibold">R 8,200.00</td>
+                                        <td class="px-6 py-4 text-sm">
+                                            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Pending</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="px-6 py-5 border-b border-gray-200 flex justify-between items-center">
-                        <h2 class="text-lg font-semibold text-gray-800">Recent Invoices</h2>
-                        <button class="text-sm font-medium text-green-600 hover:text-green-700 transition-colors">View all</button>
+                <div id="panel-invoices" class="tab-panel hidden">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center">
+                        <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">All Invoices</h2>
+                        <p class="text-gray-500 mb-6">Manage and create new invoices for your clients.</p>
+                        <button class="px-4 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors">
+                            Create New Invoice
+                        </button>
                     </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
-                            <thead>
-                                <tr class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider border-b border-gray-200">
-                                    <th class="px-6 py-3 font-semibold">Invoice ID</th>
-                                    <th class="px-6 py-3 font-semibold">Client</th>
-                                    <th class="px-6 py-3 font-semibold">Date</th>
-                                    <th class="px-6 py-3 font-semibold">Amount</th>
-                                    <th class="px-6 py-3 font-semibold">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200">
-                                <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 text-sm font-medium text-gray-900">INV-1042</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">Acme Corp</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">2026-06-15</td>
-                                    <td class="px-6 py-4 text-sm text-gray-900 font-semibold">R 12,500.00</td>
-                                    <td class="px-6 py-4 text-sm">
-                                        <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Paid</span>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 text-sm font-medium text-gray-900">INV-1043</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">TechFlow Solutions</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">2026-06-16</td>
-                                    <td class="px-6 py-4 text-sm text-gray-900 font-semibold">R 8,200.00</td>
-                                    <td class="px-6 py-4 text-sm">
-                                        <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Pending</span>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 text-sm font-medium text-gray-900">INV-1044</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">Global Logistics</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">2026-06-17</td>
-                                    <td class="px-6 py-4 text-sm text-gray-900 font-semibold">R 24,000.00</td>
-                                    <td class="px-6 py-4 text-sm">
-                                        <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">Overdue</span>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 text-sm font-medium text-gray-900">INV-1045</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">DevStudio Inc.</td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">2026-06-17</td>
-                                    <td class="px-6 py-4 text-sm text-gray-900 font-semibold">R 4,500.00</td>
-                                    <td class="px-6 py-4 text-sm">
-                                        <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Pending</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                </div>
+
+                <div id="panel-customers" class="tab-panel hidden">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center">
+                        <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Customer Directory</h2>
+                        <p class="text-gray-500 mb-6">View contact details and financial history for your customers.</p>
+                        <button class="px-4 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors">
+                            Add Customer
+                        </button>
+                    </div>
+                </div>
+
+                <div id="panel-reports" class="tab-panel hidden">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center">
+                        <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Financial Reports</h2>
+                        <p class="text-gray-500 mb-6">Generate profit & loss statements and tax summaries.</p>
+                        <button class="px-4 py-2 bg-white border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors">
+                            Generate Report
+                        </button>
+                    </div>
+                </div>
+
+                <div id="panel-settings" class="tab-panel hidden">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center">
+                        <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Account Settings</h2>
+                        <p class="text-gray-500">Configure your company profile and API integrations here.</p>
                     </div>
                 </div>
 
@@ -149,17 +203,26 @@
     </div>
 
     <script>
-        function switchTab(tabName) {
-            // Update the header text
-            document.getElementById('page-title').innerText = tabName;
+        function switchTab(tabId, tabTitle) {
+            // 1. Update the header title text
+            document.getElementById('page-title').innerText = tabTitle;
 
-            // Update active sidebar button styles
+            // 2. Hide all tab content panels, then show the selected one
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => {
+                panel.classList.remove('block');
+                panel.classList.add('hidden');
+            });
+            document.getElementById('panel-' + tabId).classList.remove('hidden');
+            document.getElementById('panel-' + tabId).classList.add('block');
+
+            // 3. Update active sidebar button styles
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => {
-                if (btn.innerText.trim() === tabName) {
-                    btn.className = "nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-green-50 text-green-700";
+                if (btn.getAttribute('data-tab') === tabId) {
+                    btn.className = "nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-green-50 text-green-700 transition-colors";
                 } else {
-                    btn.className = "nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100";
+                    btn.className = "nav-btn w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 transition-colors";
                 }
             });
         }
